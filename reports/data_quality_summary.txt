@@ -1,0 +1,16 @@
+Data Quality Summary
+
+Files Processed: 10
+
+Missing Values: 0
+
+Duplicate Rows: 0
+
+Date Issues: None detected
+
+Negative NAV values: None
+
+AMFI Codes Present: Yes
+
+Status:
+Sample datasets successfully loaded and validated.
