@@ -4,7 +4,7 @@ import pandas as pd
 
 
 
-engine=create_engine(
+engine = create_engine(
 
 "sqlite:///bluestock_mf.db"
 
@@ -12,33 +12,30 @@ engine=create_engine(
 
 
 
-fund=pd.read_csv(
+fund = pd.read_csv(
 
-'data/raw/01_fund_master.csv'
-
-)
-
-
-
-nav=pd.read_csv(
-
-'data/processed/nav_history_cleaned.csv'
+"data/raw/01_fund_master.csv"
 
 )
 
 
+nav = pd.read_csv(
 
-tx=pd.read_csv(
-
-'data/processed/transactions_cleaned.csv'
+"data/processed/nav_history_cleaned.csv"
 
 )
 
 
+tx = pd.read_csv(
 
-perf=pd.read_csv(
+"data/processed/transactions_cleaned.csv"
 
-'data/processed/performance_cleaned.csv'
+)
+
+
+perf = pd.read_csv(
+
+"data/processed/performance_cleaned.csv"
 
 )
 
@@ -57,7 +54,6 @@ index=False
 )
 
 
-
 nav.to_sql(
 
 'fact_nav',
@@ -69,7 +65,6 @@ if_exists='replace',
 index=False
 
 )
-
 
 
 tx.to_sql(
@@ -85,7 +80,6 @@ index=False
 )
 
 
-
 perf.to_sql(
 
 'fact_performance',
@@ -99,5 +93,12 @@ index=False
 )
 
 
-
 print("Database Loaded Successfully")
+
+print(len(fund))
+
+print(len(nav))
+
+print(len(tx))
+
+print(len(perf))

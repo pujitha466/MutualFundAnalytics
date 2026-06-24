@@ -3,47 +3,56 @@
 
 amfi_code
 
-INTEGER
-
-Unique AMFI scheme code
+Unique mutual fund code
 
 
+return_1yr
 
-nav
+1 year return percentage
 
-REAL
 
-Net Asset Value
+return_3yr
 
+3 year return percentage
+
+
+return_5yr
+
+5 year return percentage
+
+
+expense_ratio
+
+Annual fund expense ratio
+
+
+amount_inr
+
+Investment amount
 
 
 transaction_type
 
-TEXT
+SIP
 
-SIP / Redemption / Lumpsum
+Lumpsum
 
-
-
-expense_ratio_pct
-
-REAL
-
-Annual expense percentage
+Redemption
 
 
+kyc_status
 
-sharpe_ratio
+Verified
 
-REAL
-
-Risk adjusted return
-
+Pending
 
 
-return_1yr_pct
+aum_crore
 
-REAL
+Assets under management
 
-1 year return
+
+risk_grade
+
+Risk category
 

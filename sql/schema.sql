@@ -2,17 +2,17 @@ CREATE TABLE dim_fund(
 
 amfi_code INTEGER PRIMARY KEY,
 
-fund_house TEXT,
-
 scheme_name TEXT,
+
+fund_house TEXT,
 
 category TEXT,
 
-sub_category TEXT,
+plan TEXT,
 
-expense_ratio_pct REAL,
+risk_grade TEXT,
 
-risk_category TEXT
+expense_ratio REAL
 
 );
 
@@ -32,7 +32,7 @@ nav REAL
 
 CREATE TABLE fact_transactions(
 
-investor_id INTEGER,
+investor_id TEXT,
 
 transaction_date DATE,
 
@@ -44,7 +44,19 @@ amount_inr REAL,
 
 state TEXT,
 
-city TEXT
+city TEXT,
+
+city_tier TEXT,
+
+age_group TEXT,
+
+gender TEXT,
+
+annual_income_lakh REAL,
+
+payment_mode TEXT,
+
+kyc_status TEXT
 
 );
 
@@ -54,12 +66,30 @@ CREATE TABLE fact_performance(
 
 amfi_code INTEGER,
 
-return_1yr_pct REAL,
+return_1yr REAL,
 
-return_3yr_pct REAL,
+return_3yr REAL,
 
-return_5yr_pct REAL,
+return_5yr REAL,
 
-sharpe_ratio REAL
+benchmark_return REAL,
+
+alpha REAL,
+
+beta REAL,
+
+sharpe_ratio REAL,
+
+sortino_ratio REAL,
+
+std_dev REAL,
+
+max_drawdown REAL,
+
+aum_crore REAL,
+
+expense_ratio REAL,
+
+morningstar_rating INTEGER
 
 );
