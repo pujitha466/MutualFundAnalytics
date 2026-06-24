@@ -1,8 +1,0 @@
-investor_id,scheme_code,date,transaction_type,amount,state,kyc_status
-1001,125497,2026-01-10,SIP,5000,AP,Verified
-1002,119551,2026-01-15,Lumpsum,25000,TS,Verified
-1003,120503,2026-02-20,Redemption,10000,KA,Pending
-1004,118632,2026-03-05,SIP,3000,TN,Verified
-1005,119092,2026-03-15,Lumpsum,15000,MH,Verified
-1006,119092,2026/03/20,sip,5000,MH,Verified
-1007,119551,15-03-2026,LUMPSUM,-1000,TS,Unknown
