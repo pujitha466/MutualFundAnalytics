@@ -1,22 +1,18 @@
 CREATE TABLE dim_fund(
 
-fund_id INTEGER PRIMARY KEY,
+amfi_code INTEGER PRIMARY KEY,
 
-scheme_code INTEGER,
+fund_house TEXT,
 
-fund_name TEXT,
+scheme_name TEXT,
 
-category TEXT
+category TEXT,
 
-);
+sub_category TEXT,
 
+expense_ratio_pct REAL,
 
-
-CREATE TABLE dim_date(
-
-date_id INTEGER PRIMARY KEY,
-
-date DATE
+risk_category TEXT
 
 );
 
@@ -24,11 +20,9 @@ date DATE
 
 CREATE TABLE fact_nav(
 
-nav_id INTEGER PRIMARY KEY,
+amfi_code INTEGER,
 
-fund_id INTEGER,
-
-date_id INTEGER,
+date DATE,
 
 nav REAL
 
@@ -38,13 +32,19 @@ nav REAL
 
 CREATE TABLE fact_transactions(
 
-txn_id INTEGER PRIMARY KEY,
+investor_id INTEGER,
 
-fund_id INTEGER,
+transaction_date DATE,
 
-amount REAL,
+amfi_code INTEGER,
 
-transaction_type TEXT
+transaction_type TEXT,
+
+amount_inr REAL,
+
+state TEXT,
+
+city TEXT
 
 );
 
@@ -52,24 +52,14 @@ transaction_type TEXT
 
 CREATE TABLE fact_performance(
 
-perf_id INTEGER PRIMARY KEY,
+amfi_code INTEGER,
 
-fund_id INTEGER,
+return_1yr_pct REAL,
 
-return_1y REAL,
+return_3yr_pct REAL,
 
-expense_ratio REAL
+return_5yr_pct REAL,
 
-);
-
-
-
-CREATE TABLE fact_aum(
-
-aum_id INTEGER PRIMARY KEY,
-
-fund_id INTEGER,
-
-aum REAL
+sharpe_ratio REAL
 
 );

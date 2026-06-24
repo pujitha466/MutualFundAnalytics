@@ -1,63 +1,19 @@
 # Data Dictionary
 
 
-## nav_history
-
-
-scheme_code
-
-Type
+amfi_code
 
 INTEGER
 
-
-Meaning
-
-AMFI Scheme Code
-
-
-
-
-date
-
-Type
-
-DATE
-
-
-Meaning
-
-NAV Date
-
+Unique AMFI scheme code
 
 
 
 nav
 
-Type
-
-FLOAT
-
-
-Meaning
+REAL
 
 Net Asset Value
-
-
-
-
-Source
-
-mfapi.in
-
-
-
-## investor_transactions
-
-
-investor_id
-
-INTEGER
 
 
 
@@ -65,29 +21,29 @@ transaction_type
 
 TEXT
 
-
-
-amount
-
-FLOAT
+SIP / Redemption / Lumpsum
 
 
 
-kyc_status
+expense_ratio_pct
 
-TEXT
+REAL
 
-
-
-
-## scheme_performance
+Annual expense percentage
 
 
-return_1y
 
-FLOAT
+sharpe_ratio
+
+REAL
+
+Risk adjusted return
 
 
-expense_ratio
 
-FLOAT
+return_1yr_pct
+
+REAL
+
+1 year return
+

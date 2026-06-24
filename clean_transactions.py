@@ -1,62 +1,55 @@
 import pandas as pd
 
+
+
 df=pd.read_csv(
-"data/raw/investor_transactions.csv"
-)
 
+'data/raw/08_investor_transactions.csv'
 
-df['transaction_type']=(
-df['transaction_type']
-.str.upper()
-)
-
-
-mapping={
-
-'SIP':'SIP',
-
-'LUMPSUM':'Lumpsum',
-
-'REDEMPTION':'Redemption'
-
-}
-
-
-df['transaction_type']=(
-df['transaction_type']
-.map(mapping)
 )
 
 
 
-df=df[df['amount']>0]
+df['transaction_date']=pd.to_datetime(
 
+df['transaction_date']
 
-
-df['date']=pd.to_datetime(
-df['date'],
-errors='coerce'
 )
 
 
 
-valid=['Verified',
-'Pending']
+df['transaction_type']=df[
+
+'transaction_type'
+
+].str.title()
+
 
 
 df=df[
-df['kyc_status']
-.isin(valid)
+
+df['amount_inr']>0
+
+]
+
+
+
+df=df[
+
+df['kyc_status'].notnull()
+
 ]
 
 
 
 df.to_csv(
 
-"data/processed/transactions_cleaned.csv",
+'data/processed/transactions_cleaned.csv',
 
 index=False
 
 )
+
+
 
 print(df.head())

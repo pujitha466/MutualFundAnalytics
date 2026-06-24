@@ -1,6 +1,6 @@
-SELECT *
-FROM fact_nav
-LIMIT 5;
+SELECT COUNT(*)
+FROM dim_fund;
+
 
 
 SELECT AVG(nav)
@@ -18,34 +18,45 @@ FROM fact_nav;
 
 
 
-SELECT *
-FROM fact_performance
-WHERE expense_ratio<1;
-
-
-
-SELECT SUM(amount)
-FROM fact_transactions
-WHERE transaction_type='SIP';
-
-
-
-SELECT COUNT(*)
-FROM fact_transactions;
-
-
-
 SELECT transaction_type,
 COUNT(*)
+
 FROM fact_transactions
+
 GROUP BY transaction_type;
 
 
 
-SELECT AVG(expense_ratio)
+SELECT AVG(return_3yr_pct)
+
 FROM fact_performance;
+
+
+
+SELECT DISTINCT(category)
+
+FROM dim_fund;
 
 
 
 SELECT *
-FROM fact_performance;
+
+FROM fact_nav
+
+LIMIT 10;
+
+
+
+SELECT *
+
+FROM fact_transactions
+
+LIMIT 10;
+
+
+
+SELECT *
+
+FROM fact_performance
+
+LIMIT 10;

@@ -1,23 +1,61 @@
 from sqlalchemy import create_engine
+
 import pandas as pd
 
 
-engine = create_engine(
-    "sqlite:///bluestock_mf.db"
+
+engine=create_engine(
+
+"sqlite:///bluestock_mf.db"
+
 )
 
 
-nav = pd.read_csv(
-    "data/processed/nav_history_cleaned.csv"
+
+fund=pd.read_csv(
+
+'data/raw/01_fund_master.csv'
+
 )
 
-txn = pd.read_csv(
-    "data/processed/transactions_cleaned.csv"
+
+
+nav=pd.read_csv(
+
+'data/processed/nav_history_cleaned.csv'
+
 )
 
-perf = pd.read_csv(
-    "data/processed/performance_cleaned.csv"
+
+
+tx=pd.read_csv(
+
+'data/processed/transactions_cleaned.csv'
+
 )
+
+
+
+perf=pd.read_csv(
+
+'data/processed/performance_cleaned.csv'
+
+)
+
+
+
+fund.to_sql(
+
+'dim_fund',
+
+engine,
+
+if_exists='replace',
+
+index=False
+
+)
+
 
 
 nav.to_sql(
@@ -34,7 +72,7 @@ index=False
 
 
 
-txn.to_sql(
+tx.to_sql(
 
 'fact_transactions',
 
@@ -63,18 +101,3 @@ index=False
 
 
 print("Database Loaded Successfully")
-
-
-print("NAV Rows")
-
-print(len(nav))
-
-
-print("Transaction Rows")
-
-print(len(txn))
-
-
-print("Performance Rows")
-
-print(len(perf))
